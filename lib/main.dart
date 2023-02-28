@@ -49,13 +49,48 @@ class _MyAppState extends State<MyApp> {
     final currentQuestion = survey.questions[questionIndex];
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Survey App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Survey App"),
+          title: const Text("Pesquisa #147"),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              const UserAccountsDrawerHeader(
+                accountName: Text("Dominick Brasileiro"),
+                accountEmail: Text("brasileiro.dominick@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage:
+                      NetworkImage("https://github.com/dominickbrasileiro.png"),
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.home),
+                title: const Text("Visão Geral"),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: const Icon(Icons.event_note),
+                title: const Text("Minhas Pesquisas"),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: const Icon(Icons.settings),
+                title: const Text("Configurações"),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: const Icon(Icons.exit_to_app),
+                title: const Text("Sair do APP"),
+                onTap: () {},
+              ),
+            ],
+          ),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16),
